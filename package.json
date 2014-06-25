@@ -1,0 +1,39 @@
+{
+  "name": "grunt-jscs-prepare",
+  "description": "Sily grunt task for preparing staged for commit files for JavaScript Code Style with jscs.",
+  "version": "0.0.1",
+  "author": "Alexey Solomentsev <bu1ka@inbox.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gustavohenke/grunt-jscs-checker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gustavohenke/grunt-jscs-checker/issues"
+  },
+  "dependencies": {
+    "jscs": "~1.5.2",
+    "vow": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-jshint": "~0.10.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "gruntplugin",
+    "jscs",
+    "code style",
+    "checker"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "homepage": "https://github.com/gustavohenke/grunt-jscs-checker",
+  "main": "jscs-prepare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
