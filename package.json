@@ -1,7 +1,7 @@
 {
     "name": "grunt-jscs-prepare",
     "description": "Sily grunt task for preparing staged for commit files for JavaScript Code Style with jscs.",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Alexey Solomentsev",
     "email": "<bu1ka@inbox.ru>",
     "license": "MIT",
