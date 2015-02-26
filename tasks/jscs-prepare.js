@@ -1,7 +1,6 @@
 "use strict";
 
 var _ = require('lodash');
-var command = 'git diff --name-only --cached';
 var execSync = require('exec-sync');
 var options = null;
 
@@ -85,11 +84,12 @@ function filterFiles(filenames) {
 
 }
 
-function getStagedFileNames(options) {
+function getGitFileNames(options) {
 
+    var output;
     var filenames = [];
 
-    var output = execSync(command).toString();
+    output = execSync(options.command).toString();
 
     if (output.length > 0) {
 
@@ -109,17 +109,21 @@ module.exports = function(grunt) {
 
         options = this.options();
 
-        filenames = getStagedFileNames(options);
+        if (options.command) {
+            filenames = getGitFileNames(options);
+        } else {
+            filenames = [options.src];
+        }
 
         filenames = filterFiles(filenames);
 
         grunt.config.set('stagedFiles', filenames);
 
         if (filenames.length > 0) {
-            console.log("### files for linting: ", filenames);
+            grunt.log.ok("files for linting: ", filenames);
             done(options.force || grunt.task.run(options.nextStep));
         } else {
-            console.log("### nothing to lint: exit");
+            grunt.log.errorlns("nothing to lint: exit");
             done(true);
         }
 
